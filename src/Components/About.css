@@ -1,0 +1,14 @@
+@media only screen and (max-width:996px){
+    #big{
+        padding-bottom: 4px !important;
+        margin-bottom: 5px !important;
+    }
+    #aboutcontainer{
+        flex-direction: column !important;
+        align-items: center;
+        margin-bottom: 1rem !important;
+    }
+    #aboutcontainer img{
+        width:74vw !important;
+    }
+}

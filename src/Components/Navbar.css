@@ -1,0 +1,20 @@
+.hoverchange:hover{
+    background-color: #28A745 !important;
+}
+.hoverchange:active{
+    background-color: #229d3f !important;
+}
+.addtonav{
+    color:white !important;
+}
+.addtonav a.active, .addtonav span{
+    color:white !important;
+    opacity:1 !important;
+}
+.addtonav a{
+    color:#F8F9FA !important;
+    opacity:0.7;
+}
+.navbar-light .navbar-toggler-icon.active{
+    filter:invert();
+}
