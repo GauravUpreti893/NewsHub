@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './About.css'
+import './profileimg.jpg'
 export default function About(props) {
-  document.title = "TextUtils- About";
+  useEffect(() => {
+    props.changepagetitle(props.category);
+    props.changeprogress(30);
+    setTimeout(async () => {
+      props.changeprogress(60);
+    }, 300);
+    setTimeout(async () => {
+      props.changeprogress(100);
+    }, 300);
+    // eslint-disable-next-line
+  }, []);
+  let mode = props.mode;
   return (
     <>
       <div id="big" className="container-fluid px-0 pb-4">
@@ -12,14 +24,14 @@ export default function About(props) {
               height: "77.6vh"
             }} />
           </div>
-          <div className=" d-flex flex-column align-items-center px-5 pt-5 pb-3" style={props.mode === 'Dark Mode' ? { backgroundColor: "#F8F9FA", color: "#212529" } : { backgroundColor: "#1F1F1F", color: "white" }}>
+          <div className=" d-flex flex-column align-items-center px-5 pt-5 pb-3" style={mode === 'Dark Mode' ? { backgroundColor: "#F8F9FA", color: "#212529" } : { backgroundColor: "#1F1F1F", color: "white" }}>
             <h2>About Me</h2>
             <div className='d-flex flex-row flex-wrap justify-content-center'>
               <h5>Developer</h5>
               <h5 className='px-1 text-danger'> & Designer</h5>
             </div>
-            <p className={`text-${props.mode === 'Dark Mode' ? "secondary" : "light"} text-center`}>Myself <span className='fw-bold'>Gaurav Upreti</span>, 2nd year student at Delhi Technological University currently pursuing B-Tech degree in Computer Science. I am a front-end web developer. I can provide clean code and pixel perfect design. I also make the website more & more interactive with web animations. A responsive design makes your website accessible to all users, regardless of their device. I am well versed in both front-end and back-end.</p>
-            <a className="btn btn-primary px-2" href="https://github.com/GauravUpreti893/TextUtilsSourceCode/archive/refs/heads/master.zip" role="button"><span >Download Source Code </span>
+            <p className={`text-${mode === 'Dark Mode' ? "secondary" : "light"} text-center`}>Myself <span className='fw-bold'>Gaurav Upreti</span>, 2nd year student at Delhi Technological University currently pursuing B-Tech degree in Computer Science. I am a front-end web developer. I can provide clean code and pixel perfect design. I also make the website more & more interactive with web animations. A responsive design makes your website accessible to all users, regardless of their device. I am well versed in both front-end and back-end.</p>
+            <a className="btn btn-primary px-2" href="https://github.com/GauravUpreti893/NewsHub/archive/refs/heads/master.zip" role="button"><span >Download Source Code </span>
               <span className='mx-1'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-cloud-arrow-down-fill" viewBox="0 0 16 16">
                 <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z" />
               </svg></span></a>
@@ -33,3 +45,4 @@ export default function About(props) {
     </>
   )
 }
+
